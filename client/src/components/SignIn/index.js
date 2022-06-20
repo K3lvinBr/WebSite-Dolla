@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 import axios from 'axios'
+import { login } from '../../userSlice'
 import {
     Container,
     FormWrap,
@@ -15,7 +17,7 @@ import {
     Text
 } from './SigninElements'
 
-const SignIn = ({ setUser }) => {
+const SignIn = () => {
     const [form, setForm] = useState({
         email: '',
         password: ''
@@ -26,13 +28,15 @@ const SignIn = ({ setUser }) => {
         display: false
     })
 
+    const dispatch = useDispatch()
+    
     const navigate = useNavigate()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         await axios.post('http://localhost:3001/signin', form).then(res => {
             if (res.data.name) {
-                setUser(res.data.name)
+                dispatch(login(res.data.name))
                 navigate(`/${res.data.name}`)
             }
             else setError(res.data)

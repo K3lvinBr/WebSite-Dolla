@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Button, ButtonR } from '../ButtonElements'
 import {
     InfoContainer,
@@ -31,9 +32,10 @@ const InfoSection = ({
     primary,
     dark,
     dark2,
-    button,
-    user
+    button
 }) => {
+    const user = useSelector(state => state)
+    
     return (
         <>
             <InfoContainer lightBg={lightBg} id={id}>
@@ -55,11 +57,11 @@ const InfoSection = ({
                                         primary={primary ? 1 : 0}
                                         dark={dark ? 1 : 0}
                                         dark2={dark2 ? 1 : 0}
-                                        display={button}
+                                        display={button ? 1 : 0}
                                     >
                                         {buttonLabel}
                                     </Button>
-                                    {(!user)
+                                    {(!user.isLogged)
                                         ?
                                         <ButtonR
                                             to='/signup'
@@ -71,11 +73,11 @@ const InfoSection = ({
                                             primary={primary ? 1 : 0}
                                             dark={dark ? 1 : 0}
                                             dark2={dark2 ? 1 : 0}
-                                            display={button}
+                                            display={button ? 1 : 0}
                                         >{buttonLabel}
                                         </ButtonR>
                                         :
-                                        <Text darkText={darkText}>Olá {user}!</Text>
+                                        <Text darkText={darkText} display={button ? 1 : 0}>Olá {user.user}!</Text>
                                     }
                                 </BtnWrap>
                             </TextWrapper>

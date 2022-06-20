@@ -13,7 +13,7 @@ export const homeObjOne = {
     dark: true,
     primary: true,
     darkText: false,
-    button: 'false'
+    button: false
 }
 
 export const homeObjTwo = {
@@ -31,7 +31,7 @@ export const homeObjTwo = {
     dark: false,
     primary: false,
     darkText: true,
-    button: 'false'
+    button: false
 }
 
 export const homeObjThree = {
@@ -49,5 +49,5 @@ export const homeObjThree = {
     dark: false,
     primary: false,
     darkText: true,
-    button: 'true'
+    button: true
 }

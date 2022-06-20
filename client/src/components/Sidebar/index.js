@@ -1,4 +1,6 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { logout } from '../../userSlice'
 import {
     SidebarContainer,
     Icon,
@@ -10,7 +12,11 @@ import {
     SidebarRoute
 } from './SidebarElements'
 
-const Sidebar = ({ isOpen, toggle, user }) => {
+const Sidebar = ({ isOpen, toggle }) => {
+    const user = useSelector(state => state.isLogged)
+
+    const dispatch = useDispatch()
+
     return (
         <SidebarContainer isOpen={isOpen} onClick={toggle}>
             <Icon onClick={toggle}>
@@ -66,7 +72,8 @@ const Sidebar = ({ isOpen, toggle, user }) => {
                 <SideBtnWrap>
                     <SidebarRoute
                         to={user ? '/' : '/signin'}
-                        user={user}
+                        onClick={() => dispatch(logout())}
+                        user={user ? 1 : 0}
                         replace
                     >
                         {user ? 'Sair' : 'Entrar'}

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { FaBars } from 'react-icons/fa'
 import { IconContext } from 'react-icons/lib'
+import { useSelector, useDispatch } from 'react-redux'
 import { animateScroll as scroll } from 'react-scroll'
+import { logout } from '../../userSlice'
 import {
     Nav,
     NavbarContainer,
@@ -14,8 +16,12 @@ import {
     NavBtnLink
 } from './NavbarElements'
 
-const Navbar = ({ toggle, user }) => {
+const Navbar = ({ toggle }) => {
     const [scrollNav, setScrollNav] = useState(false)
+
+    const user = useSelector(state => state.isLogged)
+
+    const dispatch = useDispatch()
 
     const changeNav = () => {
         if (window.scrollY >= 80) {
@@ -95,7 +101,8 @@ const Navbar = ({ toggle, user }) => {
                         <NavBtn>
                             <NavBtnLink
                                 to={user ? '/' : '/signin'}
-                                user={user}
+                                onClick={() => dispatch(logout())}
+                                user={user ? 1 : 0}
                                 replace
                             >
                                 {user ? 'Sair' : 'Entrar'}

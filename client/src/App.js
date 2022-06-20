@@ -1,5 +1,6 @@
 import './App.css';
-import { useState } from 'react';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './pages';
 import SigninPage from './pages/signin';
@@ -7,15 +8,15 @@ import SignupPage from './pages/signup';
 import PrivateRoute from './components/PrivateRoute';
 
 function App() {
-  const [user, setUser] = useState(null)
-
+  const user = useSelector(state => state.user)
+  
   return (
     <Router>
       <Routes>
-        <Route path='/signin' element={<SigninPage setUser={setUser} />} exact />
+        <Route path='/signin' element={<SigninPage />} exact />
         <Route path='/signup' element={<SignupPage />} exact />
-        <Route element={<PrivateRoute user={user} />}>
-          <Route path={`/${user}`} element={<Home user={user} />} exact />
+        <Route element={<PrivateRoute />}>
+          <Route path={`/${user}`} element={<Home />} exact />
         </Route>
         <Route path='*' element={<Home />} exact />
       </Routes>

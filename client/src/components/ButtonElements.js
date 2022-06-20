@@ -12,7 +12,7 @@ export const Button = styled(Link)`
     outline: none;
     border: none;
     cursor: pointer;
-    display: ${({ display }) => (display === 'true' ? 'none' : 'flex')};
+    display: ${({ display }) => (display ? 'none' : 'flex')};
     justify-content: center;
     align-items: center;
     transition: all 0.2s ease-in-out;
@@ -34,7 +34,7 @@ export const ButtonR = styled(LinkR)`
     outline: none;
     border: none;
     cursor: pointer;
-    display: ${({ display }) => (display === 'true' ? 'flex' : 'none')};
+    display: ${({ display }) => (display ? 'flex' : 'none')};
     justify-content: center;
     align-items: center;
     transition: all 0.2s ease-in-out;

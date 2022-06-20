@@ -88,6 +88,7 @@ export const BtnWrap = styled.div`
 export const Text = styled.p`
     font-size: 20px;
     color: ${({ darkText }) => (darkText ? '#010606' : '#fff')};
+    display: ${({ display }) => (display ? 'block' : 'none')};
 `
 
 export const ImgWrap = styled.div`

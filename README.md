@@ -1,6 +1,6 @@
 # :money_with_wings: WebSite-Dolla :money_with_wings:	
 
-Website de banco virtual totalmente responsivo
+Website de banco virtual totalmente responsivo.
 <p align="center">
   <a href="#Projeto">Projeto</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#Layout">Layout</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;

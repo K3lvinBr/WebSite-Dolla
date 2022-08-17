@@ -30,3 +30,30 @@ Este projeto foi desenvolvido com as seguintes tecnologias
 - [MongoDB](https://www.mongodb.com)
 
 ## :computer: Como executar
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/), [MongoDB](https://www.mongodb.com), Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+
+```bash
+# Clone este repositório.
+$ git clone https://github.com/K3lvinBr/WebSite-Dolla.git
+
+# Acesse a pasta do projeto no terminal/cmd
+$ cd WebSite-Dolla
+
+# Instale as dependências em cada pasta
+cd client, cd server
+$ npm install
+
+# Execute a aplicação
+cd client
+$ npm start
+
+cd server
+$ node index.js
+
+# O servidor iniciará na porta:3001 - acesse http://localhost:3001
+```
+
+---
+
+Feito com ❤️ por Kelvin 👋 [Veja meu LinkedIn](https://www.linkedin.com/in/kelvin-sales-54306321a/)

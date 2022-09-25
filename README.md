@@ -9,7 +9,7 @@ Website de banco virtual totalmente responsivo.
 </p>
 
 ## :page_facing_up: Projeto
-Website de banco virtual totalmente responsivo, com sistema de cadastro, login e banco de dados. Em que utilizei React.js, React-Scroll, React-Router, Redux e Styled-components como front-end, Node.js e Express como back-end, Axios para fazer requisições e MongoDB como banco de dados.
+Website de banco virtual totalmente responsivo, com sistema de cadastro, login e banco de dados. Em que utilizei React.js, React-Scroll, React-Router, Redux e Styled-components como front-end, Node.js e Express como back-end, Axios para fazer requisições e MongoDB como banco de dados, o site também está flexível e modificado para dispositivos menores, como smartphones e tablets.
 
 ## :art: Layout
 <div align="center">
